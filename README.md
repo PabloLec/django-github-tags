@@ -1,6 +1,6 @@
 # django-github-tags [![GitHub release (latest by date)](https://img.shields.io/github/v/release/pablolec/django-github-tags)](https://github.com/PabloLec/django-github-tags/releases/) [![GitHub](https://img.shields.io/github/license/pablolec/django-github-tags)](https://github.com/PabloLec/django-github-tags/blob/main/LICENCE)
 
-`django-github-tags` is a Django app to access to GitHub API using tags in your Django templates.
+`django-github-tags` is a Django app providing access to GitHub API using tags in your Django templates.
 
 ## Installation
 
@@ -19,7 +19,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-:warning: Take notice of underscore/hyphens. Package name uses hyphens due to `pip` requirements, django uses underscore. :warning:
+:warning: Take notice of underscore/hyphens. Package name uses hyphens due to `pip` requirements while django uses underscore. :warning:
 
 ## Usage
 
@@ -27,7 +27,7 @@ This app is simple and goes straight to the point. It lets you use Django templa
 
 To use it in your template `.html` file, add:
 
-``` html
+```
 {% load django_github_tags %}
 ```
 
@@ -39,13 +39,13 @@ There are two possible tags: `github` and `github-raw`.
 
 Typical usage is:
 
-``` html
+```
 {% github "API_ENDPOINT" "PATH_ARG1" "PATH_ARG2" "PATH_ARGX" "KEY" %}
 ```
 
 For example, to access [recoverpy](https://github.com/PabloLec/recoverpy) repository programming language, you can use:
 
-``` html
+```
 Monty {% github "repos" "pablolec" "recoverpy" "language" %}
 ```
 
@@ -59,13 +59,13 @@ Monty Python
 **This tag requires only an endpoint path. The output will be a dictionary.**
 
 Typical usage is:
-``` html
+```
 {% github "API_ENDPOINT" "PATH_ARG1" "PATH_ARG2" "PATH_ARGX" %}
 ```
 
 For example, to manipulate my own GitHub profile, I can use:
 
-``` html
+```
 {% github-raw "users" "pablolec" as myprofile %}
 
 Check out my cool profile at: {% myprofile.html_url %}
@@ -92,7 +92,7 @@ If you want the full API response to use it as a dictionary, use `github-raw` co
 
 ## Examples
 
-There is of course an infinity of potential usage. Let it be:
+There is of course an infinity of potential usage:
 - Provide users dynamic GitHub profile data.
 - Display a repo stars, fork count, etc.
 - Track latest issue.
@@ -101,6 +101,7 @@ There is of course an infinity of potential usage. Let it be:
 - Sync users profile pic with GitHub's pic.
 - List latest `good first issue` labels.
 - A GitHub [insert your filter] search engine
+- etc.
 
 Well, the only limit is your imagination (and [documentation](https://docs.github.com/en/rest)).
 
