@@ -27,7 +27,7 @@ This app is simple and goes straight to the point. It lets you use Django templa
 
 To use it in your template `.html` file, add:
 
-``` python
+``` html
 {% load django_github_tags %}
 ```
 
@@ -39,13 +39,13 @@ There are two possible tags: `github` and `github-raw`.
 
 Typical usage is:
 
-```
+``` html
 {% github "API_ENDPOINT" "PATH_ARG1" "PATH_ARG2" "PATH_ARGX" "KEY" %}
 ```
 
 For example, to access [recoverpy](https://github.com/PabloLec/recoverpy) repository programming language, you can use:
 
-``` python
+``` html
 Monty {% github "repos" "pablolec" "recoverpy" "language" %}
 ```
 
@@ -59,13 +59,13 @@ Monty Python
 **This tag requires only an endpoint path. The output will be a dictionary.**
 
 Typical usage is:
-``` python
+``` html
 {% github "API_ENDPOINT" "PATH_ARG1" "PATH_ARG2" "PATH_ARGX" %}
 ```
 
 For example, to manipulate my own GitHub profile, I can use:
 
-```
+``` html
 {% github-raw "users" "pablolec" as myprofile %}
 
 Check out my cool profile at: {% myprofile.html_url %}
