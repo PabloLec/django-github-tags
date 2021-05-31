@@ -1,6 +1,8 @@
 import requests
 import json
 
+import django_github_tags.errors as _ERRORS
+
 
 def fetch(endpoint: tuple):
     """Uses requests to fetch API response for current endpoint.
@@ -17,6 +19,9 @@ def fetch(endpoint: tuple):
 
     url = f"https://api.github.com/{'/'.join(endpoint)}"
     response = json.loads(requests.get(url).text)
+
+    if type(response) == dict and response.get("message") == "Not Found":
+        raise _ERRORS.GitHubBadEndpoint(url=url)
 
     return response
 
@@ -38,6 +43,11 @@ def get_value(response: dict, key: str):
         str: Requested key value.
     """
 
-    value = response[key.lower()]
+    try:
+        value = response[key.lower()]
+    except KeyError:
+        raise _ERRORS.GitHubBadKey(current_key=key, existing_keys=tuple(response.keys()))
+    except TypeError:
+        raise _ERRORS.GitHubBadFormat(current_type=type(response))
 
     return value
