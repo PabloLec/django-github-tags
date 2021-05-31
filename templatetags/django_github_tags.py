@@ -1,5 +1,7 @@
 from django import template
 
+import django_github_tags.helper as _HELPER
+
 register = template.Library()
 
 
@@ -16,7 +18,9 @@ def github(*args):
     endpoint = args[:-1]
     key = args[-1]
 
-    return
+    response = _HELPER.fetch(endpoint=endpoint)
+
+    return _HELPER.get_value(response=response, key=key)
 
 
 @register.simple_tag(name="github-raw")
@@ -28,4 +32,5 @@ def github_raw(*args):
         dict: Raw API response dict.
     """
 
-    return
+    response = _HELPER.fetch(endpoint=args)
+    return response
