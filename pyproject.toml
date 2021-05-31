@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-github-tags"
-version = "0.1.0"
+version = "1.0.0"
 description = "Access to GitHub API using tags in your Django templates."
 authors = ["PabloLec <pablo.lecolinet@gmail.com>"]
 license = "GPL-3.0 License"
