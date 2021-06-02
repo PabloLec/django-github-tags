@@ -1,6 +1,9 @@
 # django-github-tags [![GitHub release (latest by date)](https://img.shields.io/github/v/release/pablolec/django-github-tags)](https://github.com/PabloLec/django-github-tags/releases/) [![GitHub](https://img.shields.io/github/license/pablolec/django-github-tags)](https://github.com/PabloLec/django-github-tags/blob/main/LICENCE)
 
-`django-github-tags` is a Django app providing access to GitHub API using tags in your Django templates.
+<div align="center">
+    <h4>Access to GitHub API using tags in your Django templates.</h4>
+    <img src="example1.png" /><br/><img src="example2.png" /><br/><img src="example3.png" /></div>
+
 
 ## Installation
 
