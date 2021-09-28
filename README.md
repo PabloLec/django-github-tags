@@ -7,8 +7,6 @@
 
 ## Installation
 
-*The only dependency is [requests](https://pypi.org/project/requests/) which will be installed by pip during this app installation.*
-
 ```python3 -m pip install django-github-tags```
 
 ## Configuration
